@@ -1,12 +1,14 @@
 <template>
     <div class="input-group">
         <label :for="props.name">{{ props.label }}</label>
-        <input :type="props.type" :name="props.name" :id="props.name" />
+        <input :type="props.type" :name="props.name" :id="props.name" v-model="inputValue"/>
     </div>
 </template>
 
 <script setup>
-const props = defineProps(['type', 'name', 'label'])
+const props = defineProps(['type', 'name', 'label', 'valor'])
+const emit = defineEmits(['update:valor'])
+const inputValue = defineModel(() => props.valor, (val) => emit('update:valor', val));
 </script>
 
 <style scoped>
