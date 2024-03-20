@@ -1,7 +1,7 @@
 <template>
     <div class="input-group">
         <label :for="props.name">{{ props.label }}</label>
-        <input :type="props.type" :name="props.name" :id="props.name" value="(event)=> event.target.value" />
+        <input :type="props.type" :name="props.name" :id="props.name" />
     </div>
 </template>
 
