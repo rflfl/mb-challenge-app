@@ -1,7 +1,7 @@
 <template>
     <div class="input-group">
         <label :for="props.name">{{ props.label }}</label>
-        <input :type="props.type" :name="props.name" :id="props.name" />
+        <input :type="props.type" :name="props.name" :id="props.name" value="(event)=> event.target.value" />
     </div>
 </template>
 
@@ -25,6 +25,6 @@ const props = defineProps(['type', 'name', 'label'])
 input {
     padding: 10px;
     border-radius: 7px;
-    border: 1px solid #1b1b1b;
+    border: 2px solid #1b1b1b;
 }
 </style>

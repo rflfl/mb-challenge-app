@@ -7,17 +7,32 @@ const props = defineProps(['texto', 'classe'])
 </script>
 
 <style scoped>
-.default {
-    width: 100%;
-    padding: 10px;
+.btn-default {
+    min-width: 55%;
+    padding: 10px 0;
     background-color: #ff9900;
     color: #ffffff;
     text-align: center;
     border-radius: 7px;
     border: none;
+    cursor: pointer;
     transition: 0.1s all ease-in-out;
 }
-.default:hover {
+.btn-default:hover {
     background-color: #d88200;
+}
+.btn-outline {
+    width: 45%;
+    padding: 10px 0;
+    background-color: #ffffff;
+    color: #ff9900;
+    text-align: center;
+    border-radius: 7px;
+    border: 1px solid #ff9900;
+    cursor: pointer;
+    transition: 0.1s all ease-in-out;
+}
+.w-full {
+    width: 100%;
 }
 </style>
