@@ -39,24 +39,14 @@
         <div v-if="etapa === 2 && tipoPessoa === 'fisica'" id="etapa-2" class="form-container">
             <StepHeader titulo="Pessoa Física" :etapa="etapa" />
             <BaseInput type="text" name="nome" label="Nome" v-model="cadastro.nome" />
-            <BaseInput
-                type="text"
-                name="cpf"
-                label="CPF"
-                v-model="cadastro.numero_documento"
-            />
+            <BaseInput type="text" name="cpf" label="CPF" v-model="cadastro.numero_documento" />
             <BaseInput
                 type="date"
                 name="dataNascimaneto"
                 label="Data de nascimento"
                 v-model="cadastro.data"
             />
-            <BaseInput
-                type="tel"
-                name="telefone"
-                label="Telefone"
-                v-model="cadastro.telefone"
-            />
+            <BaseInput type="tel" name="telefone" label="Telefone" v-model="cadastro.telefone" />
             <div class="secao-botoes">
                 <BaseButton classe="btn-outline" texto="Voltar" @click="prev()" />
                 <BaseButton classe="btn-default" texto="Continuar" @click="next()" />
@@ -72,24 +62,14 @@
                 label="Razão Social"
                 v-model="cadastro.nome"
             />
-            <BaseInput
-                type="text"
-                name="cnpj"
-                label="CNPJ"
-                v-model="cadastro.numero_documento"
-            />
+            <BaseInput type="text" name="cnpj" label="CNPJ" v-model="cadastro.numero_documento" />
             <BaseInput
                 type="date"
                 name="dataAbertura"
                 label="Data de abertura"
                 v-model="cadastro.data"
             />
-            <BaseInput
-                type="tel"
-                name="telefone"
-                label="Telefone"
-                v-model="cadastro.telefone"
-            />
+            <BaseInput type="tel" name="telefone" label="Telefone" v-model="cadastro.telefone" />
             <div class="secao-botoes">
                 <BaseButton classe="btn-outline" texto="Voltar" @click="prev()" />
                 <BaseButton classe="btn-default" texto="Continuar" @click="next()" />
@@ -99,12 +79,7 @@
     <transition name="slide-fade">
         <div v-if="etapa === 3" id="etapa-3" class="form-container">
             <StepHeader titulo="Senha de acesso" :etapa="etapa" />
-            <BaseInput
-                type="password"
-                name="senha"
-                label="Sua senha"
-                v-model="cadastro.senha"
-            />
+            <BaseInput type="password" name="senha" label="Sua senha" v-model="cadastro.senha" />
             <div class="secao-botoes">
                 <BaseButton classe="btn-outline" texto="Voltar" @click="prev()" />
                 <BaseButton
@@ -139,10 +114,6 @@ function next() {
 }
 function prev() {
     if (etapa.value > 1) etapa.value--
-}
-
-function updateCadastro(key, value) {
-  cadastro.value[key] = value;
 }
 </script>
 
