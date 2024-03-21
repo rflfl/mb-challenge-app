@@ -14,7 +14,7 @@ O projeto é componsto por dois subdiretórios, **api** (backend) e **client** (
 
 ### Instalação
 
-- Clone o repositório ou realize o download dos arquivos.
+Clone o repositório ou realize o download dos arquivos.
 
 ### API - (backend)
 
