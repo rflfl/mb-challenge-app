@@ -5,12 +5,14 @@ const port = 3000;
 
 app.use(express.static(path.join(__dirname, "../../client/dist")));
 
+app.use(express.json());
+
 app.get("/registration", (req, res) => {
   res.sendFile(path.join(__dirname, "../../client/dist", "index.html"));
 });
 
 app.post("/registration", (req, res) => {
-  console.log("req.body");
+  console.log(req.body);
   res.send({ status: 201, msg: "Cadastro realizado com sucesso!" });
 });
 
