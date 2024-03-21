@@ -35,4 +35,8 @@ const props = defineProps(['texto', 'classe'])
 .w-full {
     width: 100%;
 }
+.disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+}
 </style>

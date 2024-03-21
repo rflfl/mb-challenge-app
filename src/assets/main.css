@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-html, body {
+@import url('https://fonts.googleapis.com/css2?family=Roboto@0,400;1,600&display=swap');
+html,
+body {
     margin: 0;
     padding: 0;
 }
@@ -7,6 +8,6 @@ html, body {
     width: 100vw;
     height: 100vh;
     font-family: 'Roboto', sans-serif;
-    font-weight: 400;
+    font-weight: 600;
     font-style: normal;
 }
