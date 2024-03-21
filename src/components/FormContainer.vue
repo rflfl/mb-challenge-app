@@ -33,8 +33,20 @@
             <div class="secao-botoes">
                 <BaseButton
                     classe="btn-default w-full"
-                    :class="!cadastro.email.trim() || cadastro.email.length < 4 ? 'disabled' : ''"
-                    :disabled="!cadastro.email.trim() || cadastro.email.length < 4 ? true : false"
+                    :class="
+                        !cadastro.email.trim() ||
+                        cadastro.email.length < 4 ||
+                        cadastro.email.indexOf('@') === -1
+                            ? 'disabled'
+                            : ''
+                    "
+                    :disabled="
+                        !cadastro.email.trim() ||
+                        cadastro.email.length < 4 ||
+                        cadastro.email.indexOf('@') === -1
+                            ? true
+                            : false
+                    "
                     texto="Continuar"
                     @click="proximo()"
                 />
@@ -97,11 +109,11 @@
             />
             <BaseInput type="tel" name="telefone" label="Telefone" v-model="cadastro.telefone" />
             <div class="secao-botoes">
-                <BaseButton classe="btn-outline" texto="Voltar" @click="prev()" />
+                <BaseButton classe="btn-outline" texto="Voltar" @click="anterior()" />
                 <BaseButton
                     classe="btn-default"
                     texto="Continuar"
-                    @click="next()"
+                    @click="proximo()"
                     :class="
                         !cadastro.nome ||
                         !cadastro.numero_documento ||
@@ -218,7 +230,7 @@ function anterior() {
     .form-container {
         width: 360px;
         margin: 0 auto;
-        padding-top: 150px;
+        padding-top: 150px 15px 50px 15px;
     }
 
     .secao-tipo-pessoa,
@@ -232,7 +244,7 @@ function anterior() {
 }
 .form-container {
     margin: 0 auto;
-    padding: 150px 15px 0 15px;
+    padding: 100px 15px 50px 15px;
 }
 
 .secao-tipo-pessoa {
