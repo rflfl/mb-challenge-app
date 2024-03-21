@@ -8,9 +8,9 @@ O projeto é componsto por dois subdiretórios, **api** (backend) e **client** (
 
 ### Tecnologias
 
-    - Vue.js
-    - Node.js
-    - Express
+    * Vue.js
+    * Node.js
+    * Express
 
 ### Instalação
 
