@@ -1,5 +1,5 @@
 <template>
-	< <transition name="slide-fade">
+	<transition name="slide-fade">
 		<div v-if="etapa === 1" id="etapa-1" class="form-container">
 			<StepHeader titulo="Seja bem vindo(a)" :etapa="etapa" />
 			<BaseInput type="email" name="email" label="Endereço de e-mail" v-model="cadastro.email" />
@@ -27,17 +27,17 @@
 			" texto="Continuar" @click="proximo()" />
 			</div>
 		</div>
-		</transition>
-		<transition name="slide-fade">
-			<div v-if="etapa === 2 && tipoPessoa === 'fisica'" id="etapa-2" class="form-container">
-				<StepHeader titulo="Pessoa Física" :etapa="etapa" />
-				<BaseInput type="text" name="nome" label="Nome" v-model="cadastro.nome" />
-				<BaseInput type="text" name="cpf" label="CPF" v-model="cadastro.numero_documento" />
-				<BaseInput type="date" name="dataNascimaneto" label="Data de nascimento" v-model="cadastro.data" />
-				<BaseInput type="tel" name="telefone" label="Telefone" v-model="cadastro.telefone" />
-				<div class="secao-botoes">
-					<BaseButton classe="btn-outline" texto="Voltar" @click="anterior()" />
-					<BaseButton classe="btn-default" texto="Continuar" @click="proximo()" :class="!cadastro.nome ||
+	</transition>
+	<transition name="slide-fade">
+		<div v-if="etapa === 2 && tipoPessoa === 'fisica'" id="etapa-2" class="form-container">
+			<StepHeader titulo="Pessoa Física" :etapa="etapa" />
+			<BaseInput type="text" name="nome" label="Nome" v-model="cadastro.nome" />
+			<BaseInput type="text" name="cpf" label="CPF" v-model="cadastro.numero_documento" />
+			<BaseInput type="date" name="dataNascimaneto" label="Data de nascimento" v-model="cadastro.data" />
+			<BaseInput type="tel" name="telefone" label="Telefone" v-model="cadastro.telefone" />
+			<div class="secao-botoes">
+				<BaseButton classe="btn-outline" texto="Voltar" @click="anterior()" />
+				<BaseButton classe="btn-default" texto="Continuar" @click="proximo()" :class="!cadastro.nome ||
 			!cadastro.numero_documento ||
 			!cadastro.data ||
 			!cadastro.telefone
@@ -50,19 +50,19 @@
 			? true
 			: false
 			" />
-				</div>
 			</div>
-		</transition>
-		<transition name="slide-fade">
-			<div v-if="etapa === 2 && tipoPessoa === 'juridica'" id="etapa-2" class="form-container">
-				<StepHeader titulo="Pessoa Jurídica" :etapa="etapa" />
-				<BaseInput type="text" name="razaoSocial" label="Razão Social" v-model="cadastro.nome" />
-				<BaseInput type="text" name="cnpj" label="CNPJ" v-model="cadastro.numero_documento" />
-				<BaseInput type="date" name="dataAbertura" label="Data de abertura" v-model="cadastro.data" />
-				<BaseInput type="tel" name="telefone" label="Telefone" v-model="cadastro.telefone" />
-				<div class="secao-botoes">
-					<BaseButton classe="btn-outline" texto="Voltar" @click="anterior()" />
-					<BaseButton classe="btn-default" texto="Continuar" @click="proximo()" :class="!cadastro.nome ||
+		</div>
+	</transition>
+	<transition name="slide-fade">
+		<div v-if="etapa === 2 && tipoPessoa === 'juridica'" id="etapa-2" class="form-container">
+			<StepHeader titulo="Pessoa Jurídica" :etapa="etapa" />
+			<BaseInput type="text" name="razaoSocial" label="Razão Social" v-model="cadastro.nome" />
+			<BaseInput type="text" name="cnpj" label="CNPJ" v-model="cadastro.numero_documento" />
+			<BaseInput type="date" name="dataAbertura" label="Data de abertura" v-model="cadastro.data" />
+			<BaseInput type="tel" name="telefone" label="Telefone" v-model="cadastro.telefone" />
+			<div class="secao-botoes">
+				<BaseButton classe="btn-outline" texto="Voltar" @click="anterior()" />
+				<BaseButton classe="btn-default" texto="Continuar" @click="proximo()" :class="!cadastro.nome ||
 			!cadastro.numero_documento ||
 			!cadastro.data ||
 			!cadastro.telefone
@@ -75,32 +75,32 @@
 			? true
 			: false
 			" />
-				</div>
 			</div>
-		</transition>
-		<transition name="slide-fade">
-			<div v-if="etapa === 3" id="etapa-3" class="form-container">
-				<StepHeader titulo="Senha de acesso" :etapa="etapa" />
-				<BaseInput type="text" name="senha" label="Sua senha" v-model="cadastro.senha" />
-				<div class="secao-botoes">
-					<BaseButton classe="btn-outline" texto="Voltar" @click="anterior()" />
-					<BaseButton classe="btn-default" texto="Continuar" @click="proximo()"
-						:disabled="!cadastro.senha ? true : false" />
-				</div>
+		</div>
+	</transition>
+	<transition name="slide-fade">
+		<div v-if="etapa === 3" id="etapa-3" class="form-container">
+			<StepHeader titulo="Senha de acesso" :etapa="etapa" />
+			<BaseInput type="text" name="senha" label="Sua senha" v-model="cadastro.senha" />
+			<div class="secao-botoes">
+				<BaseButton classe="btn-outline" texto="Voltar" @click="anterior()" />
+				<BaseButton classe="btn-default" texto="Continuar" @click="proximo()"
+					:disabled="!cadastro.senha ? true : false" />
 			</div>
-		</transition>
-		<transition name="slide-fade">
-			<div v-if="etapa === 4" id="etapa-4" class="form-container">
-				<StepHeader titulo="Revise suas informações" :etapa="etapa" />
-				<BaseInput type="email" name="email" label="Endereço de e-mail" v-model="cadastro.email" />
-				<BaseInput type="text" name="razaoSocial" label="Razão Social" v-model="cadastro.nome" />
-				<BaseInput type="text" name="cnpj" label="CNPJ" v-model="cadastro.numero_documento" />
-				<BaseInput type="date" name="dataAbertura" label="Data de abertura" v-model="cadastro.data" />
-				<BaseInput type="tel" name="telefone" label="Telefone" v-model="cadastro.telefone" />
-				<BaseInput type="text" name="senha" label="Senha" v-model="cadastro.senha" />
-				<div class="secao-botoes">
-					<BaseButton classe="btn-outline" texto="Voltar" @click="anterior()" />
-					<BaseButton classe="btn-default" texto="Continuar" @click="cadastrar()" :class="!cadastro.nome ||
+		</div>
+	</transition>
+	<transition name="slide-fade">
+		<div v-if="etapa === 4" id="etapa-4" class="form-container">
+			<StepHeader titulo="Revise suas informações" :etapa="etapa" />
+			<BaseInput type="email" name="email" label="Endereço de e-mail" v-model="cadastro.email" />
+			<BaseInput type="text" name="razaoSocial" label="Razão Social" v-model="cadastro.nome" />
+			<BaseInput type="text" name="cnpj" label="CNPJ" v-model="cadastro.numero_documento" />
+			<BaseInput type="date" name="dataAbertura" label="Data de abertura" v-model="cadastro.data" />
+			<BaseInput type="tel" name="telefone" label="Telefone" v-model="cadastro.telefone" />
+			<BaseInput type="text" name="senha" label="Senha" v-model="cadastro.senha" />
+			<div class="secao-botoes">
+				<BaseButton classe="btn-outline" texto="Voltar" @click="anterior()" />
+				<BaseButton classe="btn-default" texto="Continuar" @click="cadastrar()" :class="!cadastro.nome ||
 			!cadastro.numero_documento ||
 			!cadastro.data ||
 			!cadastro.telefone
@@ -113,9 +113,9 @@
 			? true
 			: false
 			" />
-				</div>
 			</div>
-		</transition>
+		</div>
+	</transition>
 </template>
 
 <script setup>
@@ -158,6 +158,13 @@ function cadastrar() {
 			console.log('Status:', data.status);
 			console.log('Mensagem:', data.msg);
 			alert(data.msg)
+			etapa.value = 1
+			cadastro.value.email = ''
+			cadastro.value.nome = ''
+			cadastro.value.numero_documento = ''
+			cadastro.value.data = ''
+			cadastro.value.telefone = ''
+			cadastro.value.senha = ''
 		})
 		.catch(error => {
 			console.error('Erro:', error);
